@@ -9,7 +9,7 @@ class SongsController < ApplicationController
   end
 
   def create
-    @Song = Song.create(song_params)
+    @song = Song.create(song_params)
     redirect_to song_path(@song)
   end
 
@@ -24,6 +24,7 @@ class SongsController < ApplicationController
   end
 
   def update
+
     @song = Song.find_by(id: params[:id])
     @song.update(song_params)
     redirect_to song_path(@song)
